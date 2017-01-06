@@ -6,6 +6,8 @@ This module uses barycentric coordinates to draw a wireframe on a solid triangul
 
 You can see a detailed explanation of the technique [here](http://codeflow.org/entries/2012/aug/02/easy-wireframe-display-with-barycentric-coordinates/). It uses [`OES_standard_derivatives`](https://www.khronos.org/registry/gles/extensions/OES/OES_standard_derivatives.txt) to scale the lines to a uniform width, but also exposes a basic fallback that scales lines relative to the size of the triangle in case `OES_standard_derivatives` is not available.
 
+Please do *not* confuse it with nVidia's [Solid Wireframe technique](http://developer.download.nvidia.com/SDK/10/direct3d/Source/SolidWireframe/Doc/SolidWireframe.pdf). That technique uses a geometry shader so will not be available in WebGL any time soon.
+
 ## Example
 
 <p align="center">
@@ -111,6 +113,10 @@ Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `v` is a `flo
 ### `float cart_wire_unscaled(genType v, float width[, float feather = 0.5])`
 
 Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `v` is a `float`, `vec2`, `vec3`, or `vec4`. Grid lines will appear at integer values of any of components. `width` is the width of the grid lines where `0.0` shows no lines at all and `1.0` causes all three lines to meet in the center, and `feather` is the radius on either side of `width` over which to transition in order to avoid sharp aliasing. This shader does not use `OES_standard_derivatives`.
+
+## See also
+
+- [screen-projected-lines](https://github.com/substack/screen-projected-lines)
 
 ## License
 &copy; Ricky Reusser 2016. MIT License.
