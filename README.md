@@ -26,7 +26,7 @@ Please ***do not*** confuse it with nVidia's [Solid Wireframe technique](http://
   Cartesian coordinate based mesh. <a href="http://rreusser.github.io/glsl-solid-wireframe/cartesian.html">See demo &rarr;</a>
 </p>
 
-Or see an interactive demo [here](http://rreusser.github.io/glsl-solid-wireframe/demo.html). The code below for the triangular mesh example is below.
+Or see an interactive demo [here](http://rreusser.github.io/glsl-solid-wireframe/demo.html). The code below for the barycentric triangular mesh example is below.
 
 ```javascript
 const regl = require('regl')({extensions: ['oes_standard_derivatives']});
