@@ -6,7 +6,7 @@ This module uses barycentric coordinates to draw a wireframe on a solid triangul
 
 You can see a detailed explanation of the technique [here](http://codeflow.org/entries/2012/aug/02/easy-wireframe-display-with-barycentric-coordinates/). It uses [`OES_standard_derivatives`](https://www.khronos.org/registry/gles/extensions/OES/OES_standard_derivatives.txt) to scale the lines to a uniform width, but also exposes a basic fallback that scales lines relative to the size of the triangle in case `OES_standard_derivatives` is not available. [Support for `OES_standard_derivatives` is 96% for mobile and 99% across the board](http://webglstats.com/webgl/extension/standard_derivatives).
 
-Please ***do not*** confuse it with nVidia's [Solid Wireframe technique](http://developer.download.nvidia.com/SDK/10/direct3d/Source/SolidWireframe/Doc/SolidWireframe.pdf). That technique uses a geometry shader so will not be available in WebGL any time soon.
+Please ***do not*** confuse it with nVidia's [Solid Wireframe technique](http://developer.download.nvidia.com/SDK/10/direct3d/Source/SolidWireframe/Doc/SolidWireframe.pdf). That technique uses a geometry shader so will not be available in WebGL any time soon. The barycentric wireframe mesh produces a similar result but duplicates and expands the geometry to achieve it. It's not perfect.
 
 ## Example
 
@@ -78,7 +78,7 @@ $ npm install glsl-solid-wireframe
 
 ### JavaScript API
 
-In order to use the barycentric wireframe shader, each triangle must have a `vec2` vertex attribute that is `[0, 0]` in one corner, `[1, 0]` in the second, and `[0, 1]` in the third. Since assigning these attributes without duplicating the mesh is not a straightforward assignemnt problem, the module exports a function that simply expands the mesh and assigns the proper attributes. The extra storage may be prohibitive, but you certainly don't need to use this convenience function in order to use the shaders. You may be able to do better (PR welcome!) or barycentric coordinate assignment may simply be trivial for your geometry.
+In order to use the barycentric wireframe shader, each triangle must have a `vec2` vertex attribute that is `[0, 0]` in one corner, `[1, 0]` in the second, and `[0, 1]` in the third. Since assigning these attributes without duplicating the mesh is not a straightforward assignment problem, the module exports a function that simply expands the mesh and assigns the proper attributes. The extra storage may be prohibitive, but you certainly don't need to use this convenience function in order to use the shaders. You may be able to do better (PR welcome!) or barycentric coordinate assignment may simply be trivial for your geometry.
 
 ### var wmesh = require('glsl-solid-wireframe')(mesh[, opts = {}])
 
