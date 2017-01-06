@@ -78,7 +78,7 @@ $ npm install glsl-solid-wireframe
 
 ### JavaScript API
 
-In order to use the barycentric wireframe shader, each triangle must have a `vec2` vertex attribute that is `[0, 0]` in one corner, `[1, 0]` in the second, and `[0, 1]` in the third. Since assigning these attributes without duplicating the mesh is not a straightforward assignemnt problem, the module exports a function that simply expands the mesh and assigns the proper attributes. The extra storage may be prohibitive, but you certainly don't need to use this convenience function in order to use the shaders, in case you can do better or in case barycentric coordinate assignment is trivial for your geometry.
+In order to use the barycentric wireframe shader, each triangle must have a `vec2` vertex attribute that is `[0, 0]` in one corner, `[1, 0]` in the second, and `[0, 1]` in the third. Since assigning these attributes without duplicating the mesh is not a straightforward assignemnt problem, the module exports a function that simply expands the mesh and assigns the proper attributes. The extra storage may be prohibitive, but you certainly don't need to use this convenience function in order to use the shaders. You may be able to do better (PR welcome!) or barycentric coordinate assignment may simply be trivial for your geometry.
 
 ### var wmesh = require('glsl-solid-wireframe')(mesh[, opts = {}])
 
