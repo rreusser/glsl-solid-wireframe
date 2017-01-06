@@ -1,0 +1,57 @@
+{
+  "name": "glsl-solid-wireframe",
+  "version": "1.0.0",
+  "description": "draw wireframes on a solid mesh using a fragment shader",
+  "main": "index.js",
+  "devDependencies": {
+    "browserify": "^13.3.0",
+    "budo": "^9.4.1",
+    "bunny": "^1.0.1",
+    "control-panel": "^1.2.0",
+    "es2040": "^1.2.4",
+    "github-cornerify": "^1.0.6",
+    "h": "^0.1.0",
+    "indexhtmlify": "^1.3.1",
+    "metadataify": "^1.0.3",
+    "regl": "^1.3.0",
+    "regl-camera": "^1.1.0",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "start": "budo --open --live --host localhost examples/barycentric.js -- -t glslify -t es2040",
+    "build:cartesian": "browserify examples/cartesian.js -t glslify -t es2040 | indexhtmlify | metadataify | github-cornerify > docs/cartesian.html",
+    "build:barycentric": "browserify examples/barycentric.js -t glslify -t es2040 | indexhtmlify | metadataify | github-cornerify > docs/barycentric.html",
+    "build:demo": "browserify examples/demo.js -t glslify -t es2040 | indexhtmlify | metadataify | github-cornerify > docs/demo.html",
+    "test": "tape test/*.js"
+  },
+  "keywords": [
+    "3d",
+    "lines",
+    "webgl",
+    "glslify",
+    "glsl",
+    "simplicial complex",
+    "wireframe",
+    "mesh",
+    "stackgl"
+  ],
+  "author": "Ricky Reusser",
+  "license": "MIT",
+  "directories": {
+    "examples": "examples",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rreusser/glsl-solid-wireframe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rreusser/glsl-solid-wireframe/issues"
+  },
+  "github-corner": {
+    "fg": "#333",
+    "bg": "#fff",
+    "url": "https://github.com/rreusser/glsl-solid-wireframe"
+  },
+  "homepage": "https://github.com/rreusser/glsl-solid-wireframe#readme"
+}
