@@ -23,7 +23,7 @@ Please ***do not*** confuse it with nVidia's [Solid Wireframe technique](http://
     <img src="docs/images/cartesian.png" width="200">
   </a>
   <br>
-  Cartesian coordinate based mesh. <a href="http://rreusser.github.io/glsl-solid-wireframe/cartesian.html">See demo &rarr;</a>
+  Cartesian coordinate based mesh using <code>5 * position.xy</code> as the input. <a href="http://rreusser.github.io/glsl-solid-wireframe/cartesian.html">See demo &rarr;</a>
 </p>
 
 Or see an interactive demo [here](http://rreusser.github.io/glsl-solid-wireframe/demo.html). Code using [regl](https://github.com/regl-project/regl) to draw a barycentric triangular mesh is below.
