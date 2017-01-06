@@ -112,13 +112,13 @@ Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `b` is the `v
 
 Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `b` is the `varying vec2` barycentric coordinate, `width` is the width of the grid lines where `0.0` shows no lines at all and `1.0` causes all three lines to meet in the center, and `feather` is the radius on either side of `width` over which to transition in order to avoid sharp aliasing. This shader does not use `OES_standard_derivatives`.
 
-#### `float cart_wire_scaled(genType v, float width[, float feather = 0.5])`
+#### `float cart_wire_scaled(genType f, float width[, float feather = 0.5])`
 
-Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `v` is a `float`, `vec2`, `vec3`, or `vec4`. Grid lines will appear at integer values of any of the components. `width` is the width of the grid lines in pixels, and `feather` is the radius on either side of `width` over which to transition in order to avoid sharp aliasing. In order to use this shader, `OES_standard_derivatives` must be available so that this is only available in a fragment shader.
+Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `f` is a `float`, `vec2`, `vec3`, or `vec4`. Grid lines will appear at integer values of any of the components. `width` is the width of the grid lines in pixels, and `feather` is the radius on either side of `width` over which to transition in order to avoid sharp aliasing. In order to use this shader, `OES_standard_derivatives` must be available so that this is only available in a fragment shader.
 
-#### `float cart_wire_unscaled(genType v, float width[, float feather = 0.5])`
+#### `float cart_wire_unscaled(genType f, float width[, float feather = 0.5])`
 
-Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `v` is a `float`, `vec2`, `vec3`, or `vec4`. Grid lines will appear at integer values of any of components. `width` is the width of the grid lines where `0.0` shows no lines at all and `1.0` causes all three lines to meet in the center, and `feather` is the radius on either side of `width` over which to transition in order to avoid sharp aliasing. This shader does not use `OES_standard_derivatives`.
+Returns 0.0 on the grid lines and 1.0 on the rest of the triangle. `f` is a `float`, `vec2`, `vec3`, or `vec4`. Grid lines will appear at integer values of any of components. `width` is the width of the grid lines where `0.0` shows no lines at all and `1.0` causes all three lines to meet in the center, and `feather` is the radius on either side of `width` over which to transition in order to avoid sharp aliasing. This shader does not use `OES_standard_derivatives`.
 
 ## See also
 
