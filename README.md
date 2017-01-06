@@ -2,7 +2,7 @@
 
 > draw wireframes on a triangular mesh using a fragment shader
 
-This module uses barycentric coordinates to draw a wireframe on a solid triangular mesh. Alternatively, it will simply draw grid lines at integer component values of a float- or vector-valued function which you give it.
+This module uses barycentric coordinates to draw a wireframe on a solid triangular mesh. Alternatively, it will simply draw grid lines at integer component values of a float- or vector-valued variable which you give it.
 
 You can see a detailed explanation of the technique [here](http://codeflow.org/entries/2012/aug/02/easy-wireframe-display-with-barycentric-coordinates/). It uses [`OES_standard_derivatives`](https://www.khronos.org/registry/gles/extensions/OES/OES_standard_derivatives.txt) to scale the lines to a uniform width, but also exposes a basic fallback that scales lines relative to the size of the triangle in case `OES_standard_derivatives` is not available.
 
